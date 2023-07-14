@@ -9,6 +9,7 @@
 - NodeJS
 - Typescript
 - Prisma ORM
+- Swagger (Documentación)
 - Vitest
 - RabbitMQ
 - PostgreSQL
@@ -130,6 +131,12 @@ PORT=4000
 RABBITMQ_URL="amqp://root:root@rabbitmq:5672"
 RABBITMQ_QUEUE="sales_queue"
 ```
+
+## Documentación
+
+- Swagger: http://localhost:4000/docs
+- Swagger: http://localhost:4001/docs 
+
 
 ## Notas
 
