@@ -146,6 +146,10 @@ RABBITMQ_QUEUE="sales_queue"
 
 - Se debe configurar el tipo de storage, puede ser local o s3, si es local se guardaran los reportes en la carpeta storage del proyecto, algunas funciones no estaran disponibles si se usa local.
 
+- Si se quiere realizar pruebas en local se debe usar el comando pnpm i en cada microservicio para instalar las dependencias, luego se debe configurar el archivo .env con las variables de entorno, luego se debe ejecutar el comando pnpm run start:dev en cada microservicio para levantar los microservicios en local. Se debe tener instalado RabbitMQ y PostgreSQL en local para poder realizar pruebas en local.
+
+- Recuerda correr el comando pnpm prisma:generate y pnpm prisma:migrate:dev en el microservicio de orders para que no falle la conexion a la database.  
+
 ## TODO
 
 - Agregar pruebas e2e
