@@ -2,3 +2,7 @@ node_modules
 data
 orders/prisma/migrations
 skus/prisma/migrations
+orders/.env
+orders/.env.prod
+skus/.env
+skus/.env.prod
