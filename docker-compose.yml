@@ -1,0 +1,67 @@
+version: '3.7'
+services:
+  postgres_db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - tienda-mia-network
+    container_name: postgres_db
+
+  rabbitmq:
+    image: rabbitmq:3.12-management-alpine
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: root
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+    networks:
+      - tienda-mia-network
+    container_name: rabbitmq
+
+  app-skus:
+    build: 
+      context: ./skus
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 4000:4000
+    networks:
+      - tienda-mia-network
+    env_file:
+      - ./skus/.env.prod
+    container_name: app-skus
+    depends_on:
+      - postgres_db
+      - rabbitmq
+
+  app-orders:
+    build: 
+      context: ./orders
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 4001:4001
+    networks:
+      - tienda-mia-network
+    env_file:
+      - ./orders/.env.prod
+    container_name: app-orders
+    depends_on:
+      - postgres_db
+      - rabbitmq
+
+networks:
+  tienda-mia-network:
+    driver: bridge

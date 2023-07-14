@@ -1,2 +1,4 @@
 node_modules
 data
+orders/prisma/migrations
+skus/prisma/migrations

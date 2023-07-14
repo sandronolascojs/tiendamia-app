@@ -1,0 +1,57 @@
+{
+    "skus": [
+    {
+      "sku": "SKU001",
+      "offers": [
+        {
+          "id": 1,
+          "price": 722,
+          "stock": 14,
+          "shipping_price": 63,
+          "delivery_date": "2024-01-20",
+          "can_be_refunded": true,
+          "status": "new",
+          "guarantee": false,
+          "seller": {
+            "name": "Mueller Group",
+            "qualification": 0,
+            "reviews_quantity": 21
+          }
+        },
+        {
+            "id": 2,
+            "price": 1690,
+            "stock": 2,
+            "shipping_price": 25,
+            "delivery_date": "2024-02-17",
+            "can_be_refunded": false,
+            "status": "new",
+            "guarantee": false,
+            "seller": {
+              "name": "Marks Group",
+              "qualification": 4,
+              "reviews_quantity": 35
+            }
+          },
+          {
+            "id": 3,
+            "price": 215,
+            "stock": 76,
+            "shipping_price": 9,
+            "delivery_date": "2023-11-04",
+            "can_be_refunded": false,
+            "status": "renew",
+            "guarantee": true,
+            "seller": {
+              "name": "Towne - Gutmann",
+              "qualification": 4,
+              "reviews_quantity": 93
+            }
+          }
+        ]
+    },
+    {
+      "sku": "SKU002",
+      "offers": []
+    }]
+}
